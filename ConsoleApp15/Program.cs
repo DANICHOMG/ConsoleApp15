@@ -25,15 +25,15 @@ public class School
     public int NumberOfSchool { get; set; }
     public string Adress { get; set; }
 
-    public List<Student> LibraryBooks { get; set; }
-    public List<Teacher> LibraryBooks2 { get; set; }
-    public List<Subjects> LibraryBooks3 { get; set; }
+    public List<Student> StudentList { get; set; }
+    public List<Teacher> TeacherList { get; set; }
+    public List<Subjects> SubjectsList { get; set; }
 
     public School()
     {
-        LibraryBooks = new List<Student>();
-        LibraryBooks2 = new List<Teacher>();
-        LibraryBooks3 = new List<Subjects>();
+        StudentList = new List<Student>();
+        TeacherList = new List<Teacher>();
+        SubjectsList = new List<Subjects>();
     }
 }
 
@@ -49,7 +49,7 @@ class Program
             s = int.Parse(Console.ReadLine());
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto s;
@@ -62,7 +62,7 @@ class Program
             Adress = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto Adress;
@@ -86,7 +86,7 @@ class Program
             namestudent = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto namestudent;
@@ -99,7 +99,7 @@ class Program
             surname = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto surname;
@@ -112,7 +112,7 @@ class Program
             yeear = int.Parse(Console.ReadLine());
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto yeear;
@@ -133,7 +133,7 @@ class Program
             nameteaher = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto nameteaher;
@@ -146,7 +146,7 @@ class Program
             surname2 = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto surname2;
@@ -159,7 +159,7 @@ class Program
             subject = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto subject;
@@ -179,7 +179,7 @@ class Program
             first = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto first;
@@ -192,7 +192,7 @@ class Program
             whenfirst = DateTime.Parse(Console.ReadLine());
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto whenfirst;
@@ -205,7 +205,7 @@ class Program
             second = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto second;
@@ -218,7 +218,7 @@ class Program
             whensecond = DateTime.Parse(Console.ReadLine());
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto whensecond;
@@ -231,7 +231,7 @@ class Program
             third = Console.ReadLine();
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto third;
@@ -244,7 +244,7 @@ class Program
             whenthird = DateTime.Parse(Console.ReadLine());
 
         }
-        catch (FormatException)
+        catch (Exception e)
         {
             Console.WriteLine("Wrong format");
             goto whenthird;
@@ -261,9 +261,9 @@ class Program
         };
 
 
-        библиотека.LibraryBooks.Add(book1);
-        библиотека.LibraryBooks2.Add(teacher);
-        библиотека.LibraryBooks3.Add(subjects);
+        библиотека.StudentList.Add(book1);
+        библиотека.TeacherList.Add(teacher);
+        библиотека.SubjectsList.Add(subjects);
 
    
         Console.WriteLine($"");
@@ -274,19 +274,19 @@ class Program
         Console.WriteLine($"");
 
         Console.WriteLine("Student:");
-        foreach (var books in библиотека.LibraryBooks)
+        foreach (var books in библиотека.StudentList)
         {
             Console.WriteLine($"- {books.Name} {books.Surname}, {books.Year}");
         }
         Console.WriteLine($"");
         Console.WriteLine("Teacher:");
-        foreach (var books in библиотека.LibraryBooks2)
+        foreach (var books in библиотека.TeacherList)
         {
             Console.WriteLine($"- {books.Name} {books.Surname}, {books.Subject}");
         }
         Console.WriteLine($"");
         Console.WriteLine("Subjects:");
-        foreach (var books in библиотека.LibraryBooks3)
+        foreach (var books in библиотека.SubjectsList)
         {
             Console.WriteLine($"1. {books.first}, {books.whenfirst}");
             Console.WriteLine($"2. {books.second}, {books.whensecond}");
